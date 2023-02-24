@@ -106,6 +106,7 @@ func main() {
 	viper.SetConfigFile(".env")
 	cron := crontab.New()
 
+	// run the cron job every thursday and once every hour from 11am to 23pm.
 	err := cron.AddJob("0 11-23 * * */4", func() {
 		crawlOnePieceChapter()
 	})
