@@ -53,7 +53,7 @@ func sendEmailWithChapterData(chapterName, chapterNumber string) {
 		log.Fatal(err)
 		panic(err)
 	} else {
-		log.Println("Email sent!")
+		fmt.Println("Email sent!")
 	}
 
 	return
@@ -81,7 +81,7 @@ func crawlOnePieceChapter() {
 
 		chapterWebNumber := strings.Split(chapter.Number, " ")[3]
 		if string(content) == chapterWebNumber {
-			log.Println("The chapter is not out yet :(")
+			fmt.Println("The chapter is not out yet :(")
 		} else {
 			// send a email notifying that the chapter is out!
 			sendEmailWithChapterData(chapter.Name, chapter.Number)
